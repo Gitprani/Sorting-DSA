@@ -1,3 +1,4 @@
+work even for duplictates
 -------------With Max Element----------------------------------------
 import java.util.*;
 public class Main
