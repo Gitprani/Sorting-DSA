@@ -1,0 +1,20 @@
+public static void InsertionSort(int[] arr,int n){
+		    for(int i=0;i<n-1;i++){                        // no of passes to determine upto which index(upto i+1 index)
+		        for(int j=i+1;j>0;j--){                    // till i+1 and previous indices
+		            if(arr[j]<arr[j-1]){
+		                swap(arr,j,j-1);                   
+		            }
+		            else                  // reduce complexity, already sorted
+		            break;
+		        }
+		    }
+		    for(int el : arr){                                                               Time Complexity=O(n),O(n^2)
+		        System.out.print(el+" ");
+		    }
+		}
+		public static void swap(int[] arr,int f,int s){
+		    int temp=arr[f];
+		    arr[f]=arr[s];
+		    arr[s]=temp;
+		}
+}
