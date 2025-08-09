@@ -1,0 +1,59 @@
+-------------With Max Element----------------------------------------
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		int n=6;
+		int arr[]={12,3,17,5,60,7};
+		SelectionSort(arr,n);
+		}
+		public static void SelectionSort(int[] arr,int n){
+		    for(int i=0;i<n;i++){
+		        int last=n-1-i;                         // changes after each pass/iteration in reverse
+		        int max=MaxEl(arr,last);                // change after each pass
+		        swap(arr,max,last);
+		    }
+		    for(int i=0;i<n;i++){                                                                        Time Complexity=O(n^2),O(n^2) while searching for max
+		        System.out.print(arr[i]+" ");
+		    }
+		    
+		}
+		public static int MaxEl(int[] arr,int n){
+		    int max=0;                                  // should start from start index
+		    for(int i=0;i<=n;i++){                      // till updating 'last'
+		        if(arr[i]>arr[max]){
+		            max=i;
+		        }
+		    }
+		    return max;
+		}
+		public static void swap(int[] arr,int f,int s){
+		    int temp=arr[f];
+		    arr[f]=arr[s];
+		    arr[s]=temp;
+		}
+}
+
+---------------With Min Element----------------------------------------
+
+		public static void SelectionSort(int[] arr,int n){
+		    for(int i=0;i<n;i++){
+		        int first=i;                   // changes after each pass/iteration in forward
+		        int min=MinEl(arr,first);      // change after each pass
+		        swap(arr,min,first);
+		    }
+		    for(int i=0;i<n;i++){
+		        System.out.print(arr[i]+" ");
+		    }
+		    
+		}
+		public static int MinEl(int[] arr,int n){
+		    int min=n;                         // should start from updating 'first'
+		    for(int i=n;i<arr.length;i++){       // till last element
+		        if(arr[i]<arr[min]){
+		            min=i;
+		        }
+		    }
+		    return min;
+		}
+}
