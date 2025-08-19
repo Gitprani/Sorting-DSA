@@ -19,7 +19,7 @@ public class Main
 		    }
 		    
 		}
-		public static int MaxEl(int[] arr,int n){
+		public static int MaxEl(int[] arr,int k){
 		    int max=0;                                  // should start from start index
 		    for(int i=0;i<=n;i++){                      // till updating 'last'
 		        if(arr[i]>arr[max]){
@@ -48,7 +48,7 @@ public class Main
 		    }
 		    
 		}
-		public static int MinEl(int[] arr,int n){
+		public static int MinEl(int[] arr,int k){
 		    int min=n;                         // should start from updating 'first'
 		    for(int i=n;i<arr.length;i++){       // till last element
 		        if(arr[i]<arr[min]){
