@@ -1,7 +1,7 @@
 public static void BubbleSort(int[] arr,int n){
 		    for(int i=0;i<n;i++){
 		    boolean swap=false;
-		        for(int j=1;j<n-i;j++){
+		        for(int j=1;j<n-i;j++){          // "n-i" to skip the sorted elements in further passes
 		            if(arr[j]<arr[j-1]){
 		                int temp=arr[j];
 		                arr[j]=arr[j-1];                  Time Complexity=O(n), O(n^2)
