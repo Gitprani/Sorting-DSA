@@ -1,0 +1,17 @@
+public static void CyclicSort(int arr[]){
+	    int i=0;
+	    while(i<arr.length){
+	        int correct=arr[i]-1;       
+	        if(arr[correct]!=arr[i]){
+	            swap(arr,i,correct);
+	        }                                                   TimeComplexity=O(n)
+	        else{
+	            i++;
+	        }
+	    }
+	}
+	public static void swap(int arr[],int f,int s){
+	    int temp=arr[f];
+	    arr[f]=arr[s];
+	    arr[s]=temp;
+	}
