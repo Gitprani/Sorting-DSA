@@ -1,0 +1,60 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		int arr[]=new int[n];
+		for(int i=0;i<n;i++){
+		    arr[i]=s.nextInt();
+		}
+		arr=sortedArray(arr);     // returning the ans here
+		
+		for(int el:arr){
+		    System.out.print(el+" ");
+		}
+	}
+	public static int[] sortedArray(int[] arr){                  //function1
+	    if(arr.length==1){  
+	        return arr;    // adding the last element as base condition                                           Time ,Space Complexity=O(log n),O(n)
+	    }
+	    
+	    int mid=arr.length/2;
+	    
+	    int left[]=sortedArray(Arrays.copyOfRange(arr,0,mid));
+	    int right[]=sortedArray(Arrays.copyOfRange(arr,mid,arr.length));
+	    
+	    return mergeSort(left,right);
+	}
+	public static int[] mergeSort(int[] f,int[] s){              //function2
+	    int ans[]=new int[f.length+s.length];            // creating a new array(final ans)
+	    
+	    int i=0;       // first array pointer
+	    int j=0;       // second array pointer
+	    int k=0;       // ans array pointer
+	    
+	    while(i<f.length && j<s.length){
+	        if(f[i]<s[j]){
+	            ans[k]=f[i];
+	            i++;
+	        } 
+	        else{
+	            ans[k]=s[j];
+	            j++;
+	        }
+	        k++;
+	   }
+	   // these two while conditions are for rem elements that would be sorted while divided in above cases
+	    while(i<f.length){
+	         ans[k]=f[i];
+	         i++;
+	         k++;
+	     }   
+	    while(j<s.length){
+	         ans[k]=s[j];
+	         j++;
+	         k++;
+	     }   
+	     return ans;
+	}
+}
