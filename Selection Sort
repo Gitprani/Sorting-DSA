@@ -49,8 +49,8 @@ public class Main
 		    
 		}
 		public static int MinEl(int[] arr,int k){
-		    int min=n;                         // should start from updating 'first'
-		    for(int i=n;i<arr.length;i++){       // till last element
+		    int min=k;                         // should start from updating 'first'
+		    for(int i=k;i<arr.length;i++){       // till last element
 		        if(arr[i]<arr[min]){
 		            min=i;
 		        }
