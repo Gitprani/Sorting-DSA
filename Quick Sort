@@ -40,9 +40,9 @@ class Main{
             if(i<j){
                 swap(arr,i,j);
             }
-        }
-        swap(arr,f,j);
-        return j;
+        } 
+        swap(arr,f,j);              // when loop is ends(j <i)
+        return j;                 
     }
     public static void swap(int arr[],int f,int s){
         int temp=arr[f];
